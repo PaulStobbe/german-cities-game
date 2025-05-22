@@ -1,22 +1,23 @@
 class GermanCitiesGame {
     constructor() {
+        // Updated city coordinates to match the 400x500 SVG viewBox and accurate Germany geography
         this.cities = [
-            { name: 'Berlin', x: 520, y: 280, state: 'Berlin', population: '3.7M', hint: 'Capital city, once divided by a wall' },
-            { name: 'München', x: 420, y: 650, state: 'Bayern', population: '1.5M', hint: 'Home of Oktoberfest and BMW' },
-            { name: 'Hamburg', x: 380, y: 180, state: 'Hamburg', population: '1.9M', hint: 'Major port city, media capital' },
-            { name: 'Köln', x: 260, y: 400, state: 'Nordrhein-Westfalen', population: '1.1M', hint: 'Famous cathedral, oldest city in Germany' },
-            { name: 'Frankfurt', x: 340, y: 450, state: 'Hessen', population: '750K', hint: 'Financial center, many skyscrapers' },
-            { name: 'Stuttgart', x: 360, y: 580, state: 'Baden-Württemberg', population: '630K', hint: 'Home of Mercedes-Benz and Porsche' },
-            { name: 'Dresden', x: 500, y: 380, state: 'Sachsen', population: '560K', hint: 'Beautiful baroque architecture, Elbe river' },
-            { name: 'Leipzig', x: 460, y: 350, state: 'Sachsen', population: '590K', hint: 'City of music, Bach worked here' },
-            { name: 'Hannover', x: 360, y: 280, state: 'Niedersachsen', population: '540K', hint: 'Major trade fair city' },
-            { name: 'Nürnberg', x: 420, y: 550, state: 'Bayern', population: '520K', hint: 'Historic old town, Christmas market' },
-            { name: 'Bremen', x: 320, y: 200, state: 'Bremen', population: '570K', hint: 'Hanseatic city, space industry' },
-            { name: 'Düsseldorf', x: 240, y: 360, state: 'Nordrhein-Westfalen', population: '620K', hint: 'Fashion and art center, Japanese quarter' },
-            { name: 'Dortmund', x: 280, y: 340, state: 'Nordrhein-Westfalen', population: '590K', hint: 'Football city, former steel industry' },
-            { name: 'Essen', x: 260, y: 340, state: 'Nordrhein-Westfalen', population: '580K', hint: 'European Capital of Culture 2010' },
-            { name: 'Magdeburg', x: 440, y: 300, state: 'Sachsen-Anhalt', population: '240K', hint: 'Otto the Great\'s city, Elbe river' },
-            { name: 'Rostock', x: 460, y: 140, state: 'Mecklenburg-Vorpommern', population: '210K', hint: 'Baltic Sea port, university city' }
+            { name: 'Berlin', x: 310, y: 160, state: 'Berlin', population: '3.7M', hint: 'Capital city, once divided by a wall' },
+            { name: 'München', x: 280, y: 400, state: 'Bayern', population: '1.5M', hint: 'Home of Oktoberfest and BMW' },
+            { name: 'Hamburg', x: 240, y: 90, state: 'Hamburg', population: '1.9M', hint: 'Major port city, media capital' },
+            { name: 'Köln', x: 160, y: 240, state: 'Nordrhein-Westfalen', population: '1.1M', hint: 'Famous cathedral, oldest city in Germany' },
+            { name: 'Frankfurt', x: 200, y: 260, state: 'Hessen', population: '750K', hint: 'Financial center, many skyscrapers' },
+            { name: 'Stuttgart', x: 220, y: 340, state: 'Baden-Württemberg', population: '630K', hint: 'Home of Mercedes-Benz and Porsche' },
+            { name: 'Dresden', x: 320, y: 220, state: 'Sachsen', population: '560K', hint: 'Beautiful baroque architecture, Elbe river' },
+            { name: 'Leipzig', x: 290, y: 200, state: 'Sachsen', population: '590K', hint: 'City of music, Bach worked here' },
+            { name: 'Hannover', x: 230, y: 160, state: 'Niedersachsen', population: '540K', hint: 'Major trade fair city' },
+            { name: 'Nürnberg', x: 260, y: 360, state: 'Bayern', population: '520K', hint: 'Historic old town, Christmas market' },
+            { name: 'Bremen', x: 200, y: 120, state: 'Bremen', population: '570K', hint: 'Hanseatic city, space industry' },
+            { name: 'Düsseldorf', x: 150, y: 220, state: 'Nordrhein-Westfalen', population: '620K', hint: 'Fashion and art center, Japanese quarter' },
+            { name: 'Dortmund', x: 170, y: 210, state: 'Nordrhein-Westfalen', population: '590K', hint: 'Football city, former steel industry' },
+            { name: 'Essen', x: 160, y: 200, state: 'Nordrhein-Westfalen', population: '580K', hint: 'European Capital of Culture 2010' },
+            { name: 'Magdeburg', x: 280, y: 170, state: 'Sachsen-Anhalt', population: '240K', hint: 'Otto the Great\\'s city, Elbe river' },
+            { name: 'Rostock', x: 290, y: 70, state: 'Mecklenburg-Vorpommern', population: '210K', hint: 'Baltic Sea port, university city' }
         ];
 
         this.gameMode = 'locate';
@@ -118,8 +119,8 @@ class GermanCitiesGame {
         if (this.gameMode !== 'locate') return;
 
         const rect = event.currentTarget.getBoundingClientRect();
-        const x = (event.clientX - rect.left) * (800 / rect.width);
-        const y = (event.clientY - rect.top) * (1000 / rect.height);
+        const x = (event.clientX - rect.left) * (400 / rect.width);
+        const y = (event.clientY - rect.top) * (500 / rect.height);
 
         this.checkLocationAnswer(x, y);
     }
@@ -135,7 +136,7 @@ class GermanCitiesGame {
     checkLocationAnswer(clickX, clickY) {
         const currentCity = this.cities[this.currentCityIndex];
         const distance = Math.sqrt(Math.pow(clickX - currentCity.x, 2) + Math.pow(clickY - currentCity.y, 2));
-        const threshold = 50;
+        const threshold = 30; // Reduced threshold for more precise gameplay
 
         this.processAnswer(distance <= threshold, currentCity);
     }
@@ -305,7 +306,7 @@ class GermanCitiesGame {
 
     gameComplete() {
         const questionElement = document.getElementById('question');
-        questionElement.textContent = '🎉 Congratulations! You\'ve completed all cities!';
+        questionElement.textContent = '🎉 Congratulations! You\\'ve completed all cities!';
         
         const feedback = document.getElementById('feedback');
         feedback.textContent = `Final Score: ${this.score} points. Great job learning German geography!`;
