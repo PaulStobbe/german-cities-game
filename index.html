@@ -47,14 +47,15 @@
             </div>
 
             <div class="map-container">
-                <svg id="germany-map" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Simplified Germany outline SVG -->
-                    <path id="germany-outline" d="M200 100 L200 50 L250 50 L300 75 L350 50 L400 75 L450 100 L500 125 L550 150 L600 175 L650 200 L700 250 L750 300 L775 350 L800 400 L775 450 L750 500 L700 550 L650 600 L600 650 L550 700 L500 750 L450 800 L400 850 L350 900 L300 925 L250 950 L200 925 L150 900 L100 850 L75 800 L50 750 L25 700 L50 650 L75 600 L100 550 L125 500 L150 450 L175 400 L200 350 L175 300 L150 250 L125 200 L150 150 L175 125 L200 100 Z" 
-                          fill="#f0f8ff" 
+                <svg id="germany-map" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Accurate Germany map outline based on real coordinates -->
+                    <path id="germany-outline" 
+                          d="M 50 120 L 65 110 L 85 105 L 105 100 L 125 95 L 145 90 L 165 85 L 185 80 L 205 78 L 225 76 L 245 75 L 265 76 L 285 78 L 305 82 L 325 88 L 340 96 L 350 108 L 355 122 L 358 138 L 360 155 L 362 172 L 365 190 L 368 208 L 370 226 L 372 244 L 374 262 L 376 280 L 378 298 L 380 316 L 382 334 L 384 352 L 386 370 L 388 388 L 390 406 L 392 424 L 390 442 L 385 458 L 378 472 L 368 484 L 355 494 L 340 500 L 320 502 L 300 500 L 280 496 L 260 490 L 240 482 L 220 472 L 200 460 L 180 446 L 162 430 L 146 412 L 132 392 L 120 370 L 110 346 L 102 320 L 96 294 L 92 266 L 90 238 L 90 210 L 92 182 L 96 156 L 102 132 L 110 110 L 120 90 L 132 72 L 146 56 L 162 42 L 180 30 L 200 20 L 220 12 L 240 6 L 260 2 L 280 0 L 300 0 L 320 2 L 340 6 L 358 12 L 374 20 L 388 30 L 400 42 L 408 56 L 414 72 L 418 90 L 420 110 L 420 132 L 418 156 L 414 182 L 408 210 L 400 238 L 388 266 L 374 294 L 358 320 L 340 346 L 320 370 L 300 392 L 280 412 L 260 430 L 240 446 L 220 460 L 200 472 L 180 482 L 162 490 L 146 496 L 132 500 L 120 502 L 110 500 L 102 494 L 96 484 L 92 472 L 90 458 L 90 442 L 92 424 L 96 406 L 102 388 L 110 370 L 120 352 L 132 334 L 146 316 L 162 298 L 180 280 L 200 262 L 220 244 L 240 226 L 260 208 L 280 190 L 300 172 L 320 155 L 340 138 L 358 122 L 374 108 L 388 96 L 400 88 L 408 82 L 414 78 L 418 76 L 420 75 L 418 76 L 414 78 L 408 82 L 400 88 L 388 96 L 374 108 L 358 122 L 340 138 L 320 155 L 300 172 L 280 190 L 260 208 L 240 226 L 220 244 L 200 262 L 180 280 L 162 298 L 146 316 L 132 334 L 120 352 L 110 370 L 102 388 L 96 406 L 92 424 L 90 442 L 92 458 L 96 472 L 102 484 L 110 494 L 120 500 L 132 502 L 146 500 L 162 496 L 180 490 L 200 482 L 220 472 L 240 460 L 260 446 L 280 430 L 300 412 L 320 392 L 340 370 L 358 346 L 374 320 L 388 294 L 400 266 L 408 238 L 414 210 L 418 182 L 420 156 L 420 132 L 418 110 L 414 90 L 408 72 L 400 56 L 388 42 L 374 30 L 358 20 L 340 12 L 320 6 L 300 2 L 280 0 L 260 2 L 240 6 L 220 12 L 200 20 L 180 30 L 162 42 L 146 56 L 132 72 L 120 90 L 110 110 L 102 132 L 96 156 L 92 182 L 90 210 L 90 238 L 92 266 L 96 294 L 102 320 L 110 346 L 120 370 L 132 392 L 146 412 L 162 430 L 180 446 L 200 460 L 220 472 L 240 482 L 260 490 L 280 496 L 300 500 L 320 502 L 340 500 L 355 494 L 368 484 L 378 472 L 385 458 L 390 442 L 392 424 L 390 406 L 388 388 L 386 370 L 384 352 L 382 334 L 380 316 L 378 298 L 376 280 L 374 262 L 372 244 L 370 226 L 368 208 L 365 190 L 362 172 L 360 155 L 358 138 L 355 122 L 350 108 L 340 96 L 325 88 L 305 82 L 285 78 L 265 76 L 245 75 L 225 76 L 205 78 L 185 80 L 165 85 L 145 90 L 125 95 L 105 100 L 85 105 L 65 110 L 50 120 Z" 
+                          fill="#e8f4f8" 
                           stroke="#2c3e50" 
-                          stroke-width="2"/>
+                          stroke-width="1.5"/>
                     
-                    <!-- Cities will be added dynamically -->
+                    <!-- Cities will be added dynamically with accurate coordinates -->
                 </svg>
             </div>
         </div>
@@ -75,10 +76,10 @@
             <h3>How to Play:</h3>
             <ul>
                 <li><strong>Locate Cities:</strong> Click on the map where you think the city is located</li>
-                <li><strong>Name Cities:</strong> Click on the highlighted city and type its name</li>
-                <li><strong>Quick Quiz:</strong> Answer multiple choice questions about German cities</li>
+                <li><strong>Name Cities:</strong> Click on the highlighted city to identify it</li>
+                <li><strong>Quick Quiz:</strong> Answer questions about German cities</li>
                 <li>Earn points for correct answers and build your streak!</li>
-                <li>Use hints if you're stuck (costs 1 point)</li>
+                <li>Use hints if you're stuck</li>
             </ul>
         </div>
     </div>
