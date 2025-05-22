@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Cities Geography Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇩🇪 German Cities Geography Game</h1>
+            <p>Test your knowledge of German city locations!</p>
+        </header>
+
+        <div class="game-stats">
+            <div class="stat">
+                <span class="stat-label">Score:</span>
+                <span id="score" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Streak:</span>
+                <span id="streak" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Best Streak:</span>
+                <span id="best-streak" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Progress:</span>
+                <span id="progress" class="stat-value">0/16</span>
+            </div>
+        </div>
+
+        <div class="game-modes">
+            <button id="mode-locate" class="mode-btn active">📍 Locate Cities</button>
+            <button id="mode-name" class="mode-btn">🏙️ Name Cities</button>
+            <button id="mode-quiz" class="mode-btn">❓ Quick Quiz</button>
+        </div>
+
+        <div class="game-area">
+            <div class="question-panel">
+                <h2 id="question">Click on Berlin</h2>
+                <div class="hint" id="hint"></div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="map-container">
+                <svg id="germany-map" viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Simplified Germany outline SVG -->
+                    <path id="germany-outline" d="M200 100 L200 50 L250 50 L300 75 L350 50 L400 75 L450 100 L500 125 L550 150 L600 175 L650 200 L700 250 L750 300 L775 350 L800 400 L775 450 L750 500 L700 550 L650 600 L600 650 L550 700 L500 750 L450 800 L400 850 L350 900 L300 925 L250 950 L200 925 L150 900 L100 850 L75 800 L50 750 L25 700 L50 650 L75 600 L100 550 L125 500 L150 450 L175 400 L200 350 L175 300 L150 250 L125 200 L150 150 L175 125 L200 100 Z" 
+                          fill="#f0f8ff" 
+                          stroke="#2c3e50" 
+                          stroke-width="2"/>
+                    
+                    <!-- Cities will be added dynamically -->
+                </svg>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="next-question" class="btn primary">Next Question</button>
+            <button id="skip-question" class="btn secondary">Skip</button>
+            <button id="show-all" class="btn secondary">Show All Cities</button>
+            <button id="restart-game" class="btn danger">Restart Game</button>
+        </div>
+
+        <div class="city-list" id="city-list">
+            <h3>German Cities in This Game:</h3>
+            <div class="cities-grid" id="cities-grid"></div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li><strong>Locate Cities:</strong> Click on the map where you think the city is located</li>
+                <li><strong>Name Cities:</strong> Click on the highlighted city and type its name</li>
+                <li><strong>Quick Quiz:</strong> Answer multiple choice questions about German cities</li>
+                <li>Earn points for correct answers and build your streak!</li>
+                <li>Use hints if you're stuck (costs 1 point)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
